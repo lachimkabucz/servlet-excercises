@@ -7,6 +7,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.time.LocalDateTime;
+import java.time.ZoneId;
 
 @WebServlet(name = "HelloWorldServlet", value = "/helloWorld")
 public class HelloWorldServlet extends HttpServlet {
@@ -22,10 +24,10 @@ public class HelloWorldServlet extends HttpServlet {
                         "<html lang=\"en\" dir=\"ltr\">\n" +
                         "<head>\n" +
                         "<meta charset=\"utf-8\">\n" +
-                        "<title>Statyczna strona</title>\n" +
+                        "<title>Dynamiczna strona</title>\n" +
                         "</head>\n" +
                         "<body>\n" +
-                        "<p>Dzisiaj jest 26 stycznia 2019</p>\n" +
+                        "<p>Dzisiaj jest"+" " + LocalDateTime.now(ZoneId.of("Europe/Warsaw")) + " " + "</p>\n" +
                         "</body>\n" +
                         "</html>\n"
         );
